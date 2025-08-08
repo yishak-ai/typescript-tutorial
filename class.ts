@@ -14,6 +14,7 @@ class Student {
     constructor(name:string, grades:number[]) {
         this.name = name;
         this.grades = grades;
+        console.log(`Student created: ${this.name}- Grades: ${this.grades.join(",")}`)
     }
      addGrade(grade: number){
       this.grades.push(grade);
@@ -40,6 +41,8 @@ class CollageStudent extends Student{
     constructor(name: string, grades: number[], major: string){
          super(name, grades);
          this.major = major;
+         console.log(`College Student created: ${this.name} - Major: ${this.major} - Grades: ${this.grades.join(",")}`);
+         
     }
     isPassed(collback: (average: number) => boolean): boolean {
          const average = this.getAverage(...this.grades);
